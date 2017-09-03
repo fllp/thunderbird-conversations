@@ -774,6 +774,7 @@
       <menuitem label="&stub.context.detach;" onclick="getCurrentAttInfo().detach(true);"></menuitem>
       <menuitem label="&stub.context.delete;" onclick="getCurrentAttInfo().detach(false);"></menuitem>
     </menu>
+
     <script id="detailsTemplate" type="text/x-handlebars-template"><![CDATA[
         {{#if dataContactsFrom.length}}
           <div class="detailsLine fromLine">
@@ -807,6 +808,7 @@
         {{/each}}
       ]]>
     </script>
+
     <script id="messageTemplate" type="text/x-handlebars-template"><![CDATA[
       <li class="message collapsed {{extraClasses}}">
         <div class="messageHeader hbox">
@@ -1131,13 +1133,16 @@
       </li>
       ]]>
     </script>
+
     <!-- Weird markup again, otherwise, the comma is separated from the name by a
       space because of the #text whitespace-only nodes that end up in the DOM.
     -->
+
     <!-- Generic contact template with tooltip -->
     <script id="contactTemplate" type="text/x-handlebars-template"><![CDATA[
       {{tmpl "contactLabel" this}}{{tmpl "contactTooltip" this}}
     ]]></script>
+
     <!-- Contact template specific to recipients, without tooltip -->
     <script id="contactLabelTemplate" type="text/x-handlebars-template"><![CDATA[<span
       >{{separator}}</span
@@ -1151,10 +1156,12 @@
             > &lt;{{trim displayEmail}}&gt;</span>{{/if}}{{#if writeBr}}<br />{{/if}}</span
         ></span
     >]]></script>
+
     <!-- Tooltip template specific to recipients -->
     <script id="contactTooltipTemplate" type="text/x-handlebars-template"><![CDATA[<span
       class="contactTooltipWrapper contact">{{tmpl "innerTooltip" this}}</span
     >]]></script>
+
     <!-- Inner tooltip template, to be used by other templates. Currently only used by the template above. -->
     <script id="innerTooltipTemplate" type="text/x-handlebars-template"><![CDATA[<div
       class="tooltip">
@@ -1213,11 +1220,13 @@
         </div>
       </div
     >]]></script>
+
     <script id="attachmentIconTemplate" type="text/x-handlebars-template"><![CDATA[
       {{#if attachments.length}}
         <svg class="icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><use xlink:href="chrome://conversations/skin/material-icons.svg#attachment"></use></svg>
       {{/if}}
     ]]></script>
+
     <script id="attachmentDetailsTemplate" type="text/x-handlebars-template"><![CDATA[
       {{#if attachments.length}}
         <u>{{attachmentsPlural}}:</u>
@@ -1228,6 +1237,7 @@
         {{/each}}
       {{/if}}
     ]]></script>
+
     <script id="attachmentsTemplate" type="text/x-handlebars-template"><![CDATA[
       {{#if attachments.length}}
         <ul class="attachments">
@@ -1280,6 +1290,7 @@
         </ul>
       {{/if}}
     ]]></script>
+
     <script id="popularContactTemplate" type="text/x-handlebars-template"><![CDATA[
       <div class="popularContact">
         <img class="popularPhoto" src="{{photo}}" style="float: left" />
@@ -1288,6 +1299,7 @@
         <span class="popularEmail">{{email}}</span>
       </div>
     ]]></script>
+
     <script id="quickReplyTemplate" type="text/x-handlebars-template"><![CDATA[
       <div class="quickReply" ondragover="quickReplyCheckDrag(event);" ondrop="quickReplyDrop(event);">
         <div class="quickReplyContacts">
@@ -1424,6 +1436,7 @@
       </div>
       ]]>
     </script>
+
     <script id="quickReplyAttachmentTemplate" type="text/x-handlebars-template"><![CDATA[
       <ul class="quickReplyAttachment">
         {{str "attachment"}}:
@@ -1433,6 +1446,7 @@
       </ul>
       ]]>
     </script>
+
     <div id="wrapper">
       <div id="conversationHeaderWrapper">
         <div id="conversationHeader" class="hbox">
